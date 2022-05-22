@@ -1,0 +1,42 @@
+import java.util.*;
+class Rectangle
+{ int length;
+int breadth;
+void area() // method
+{ int area=length*breadth;
+System.out.println(area);
+}
+Rectangle() // constructor with no parameter
+{ length=0;
+breadth=0;
+}
+Rectangle(int len)// constructor with one parameter
+{ length=len;
+breadth=len;
+}
+Rectangle(int l,int b) // constructor with two parameters
+{ length=l;
+breadth=b;
+}
+Rectangle(Rectangle r) //copy constructor
+{ length=r.length;
+breadth=r.breadth;
+}
+public static void main(String args[])
+{ int len, br;
+Rectangle r1= new Rectangle();
+System.out.print("Area of object r1 : ");
+r1.area();
+Scanner input= new Scanner(System.in);
+System.out.println("Enter the length and breadth");
+len=input.nextInt();
+br=input.nextInt();
+Rectangle r2= new Rectangle(len, br);
+System.out.print("Area of object r2 : ");
+r2.area();
+Rectangle r3= new Rectangle(50);
+System.out.print("Area of object r3 : ");
+r3.area();
+Rectangle r4= new Rectangle(r2);
+System.out.print("Area of object r4 : ");
+r4.area();}}

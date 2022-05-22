@@ -1,0 +1,33 @@
+import java.util.Scanner;
+class Students {
+public int id, key;
+private int accesskey = 1310;
+public void checkaccess(int key)
+{
+if(key == accesskey)
+{
+System.out.println("You are provided the access for this course");
+System.out.println("Duration of access : 3 months");
+}
+else
+{
+System.out.println("Access Key is wrong ");
+System.out.println("You are not provided the access for this course");
+}
+}
+}
+public class Access
+{
+public static void main(String args[]) {
+Students s1 = new Students();
+Students s2 = new Students();
+Scanner s = new Scanner(System.in);
+System.out.println("Enter your id and key");
+s1.id = s.nextInt();
+s1.key = s.nextInt();
+s1.checkaccess(s1.key);
+System.out.println("Enter your id and key");
+s2.id = s.nextInt();
+s2.key = s.nextInt();
+s2.checkaccess(s2.key);
+}}

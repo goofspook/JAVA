@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Prime {
+public static void main(String[] args) {
+int n, i;
+boolean flag=false;
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter order number");
+n = sc.nextInt();
+if(n==1)
+System.out.println("The customer will get 50% discount");
+else
+{
+for(i=2;i<n;i++)
+{
+if(n%i==0)
+{
+System.out.println("The customer will get 50%
+discount");
+flag=true;
+break;
+}
+} if(flag==false)
+System.out.println("The customer will get 80% discount");
+}}
+}

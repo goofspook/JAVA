@@ -1,0 +1,55 @@
+import java.util.Scanner;
+class EliteCustomer
+{ int no_of_supercoins;
+double[] amount_spent = new double[12];
+double total_amount=0;
+void calculatetotalamount()
+{
+Scanner s = new Scanner(System.in);
+int i;
+for(i=0;i<12;i++)
+{
+System.out.println("Enter the amount spent on orders in Month " + (i+1));
+amount_spent[i] = s.nextDouble();
+}
+for(i=0;i<12;i++)
+{
+total_amount = total_amount+ amount_spent[i];
+}
+System.out.println("Total amount spent in a year is " + total_amount);
+}
+void calculatesupercoins()
+{
+System.out.println("You are eligible for 2 supercoins per 100 Rs spent");
+no_of_supercoins = (int)(total_amount/100)*2;
+System.out.println("The number of supercoins earned is " + no_of_supercoins);
+}} class IconCustomer extends EliteCustomer
+{
+void calculatesupercoins() //overridden method
+{
+System.out.println("You are eligible for 4 supercoins per 100 Rs spent");
+no_of_supercoins = (int)(total_amount/100)*4;
+System.out.println("The number of supercoins earned is " + no_of_supercoins);
+}
+}
+public class SuperCoins
+{
+public static void main(String args[])
+{
+Scanner s = new Scanner(System.in);
+System.out.println("Enter the customer type 1. Elite or 2. Icon");
+int ch = s.nextInt();
+if(ch==1)
+{
+EliteCustomer customer = new EliteCustomer();
+customer.calculatetotalamount();
+customer.calculatesupercoins();
+}
+else
+{
+IconCustomer customer = new IconCustomer();
+customer.calculatetotalamount();
+customer.calculatesupercoins();
+}
+}
+}

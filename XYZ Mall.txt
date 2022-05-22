@@ -1,0 +1,28 @@
+import java.util.Random;
+public class Array {
+public static void main(String args[]) {
+int min = 1000;
+int max = 9999;
+int ordernum[] = new int[100];
+Random r = new Random();
+for(int i =0; i<100;i++)
+{
+ordernum[i] = r.nextInt((max - min) + 1) + min;
+}
+for(int i=0; i < ordernum.length; i++)
+{
+int number = ordernum[i];
+int reversedNumber = 0;
+int temp=0;
+while(number > 0)
+{
+temp = number % 10;
+number = number / 10;
+reversedNumber = reversedNumber * 10 + temp;
+}
+if(ordernum[i] == reversedNumber)
+System.out.println("The customer with order number"+" "+ordernum[i]+" "+ "won the lucky
+coupon");
+}
+}
+}

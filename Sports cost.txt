@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Lab3
+{
+public static void main(String args[])
+{ int itemlist[][] =
+new int[2][3];
+int totalcost[]= new int[2];
+int cost[] = {9,80,60};
+Scanner s = new Scanner(System.in);
+for(int i=0;i<2;i++)
+{
+System.out.println("Enter the quantity of balls, bats and gloves for Team" + (i+1));
+for(int j=0;j<3;j++)
+{ itemlist[i][j]= s.nextInt();
+}}
+for(int i=0;i<2;i++)
+{
+for(int j=0;j<3;j++)
+{ totalcost[i]=totalcost[i]+ itemlist[i][j]*cost[j];
+}}
+System.out.println("The total bill for Team A and Team B is as follows");
+System.out.println("For Team A " + totalcost[0]);
+System.out.println("For Team B " + totalcost[1]);
+}}

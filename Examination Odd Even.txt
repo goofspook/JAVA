@@ -1,0 +1,18 @@
+public class Odd_Even
+{
+public static void main(String args[])
+{ int sumeven=0, sumodd=0;
+for(int i=1;i<=100;i++)
+{
+if(i%2==0)
+{ sumeven =
+sumeven+i;
+} else
+{ sumodd =
+sumodd+i;
+}
+}
+System.out.println("The sum of even positions is "+ sumeven);
+System.out.println("The sum of odd positions is "+ sumodd);
+}
+}

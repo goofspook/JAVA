@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class Dblock
+{
+int u;
+Dblock(int usage) //parameterized constructor
+{
+u = usage;
+}
+} class Eblock //parameterized constructor
+{
+int u;
+Eblock(int usage)
+{
+u=usage;
+}
+}
+public class Labexercise3
+{
+public static void main(String args[])
+{
+Scanner s = new Scanner(System.in);
+int maxlevel;
+int currentlevel=0;
+System.out.println("Enter maximum level of tank");
+maxlevel = s.nextInt();
+int choice;
+currentlevel=maxlevel;
+while(currentlevel>= 150)
+{
+System.out.println("Which block used water 1. D Block 2. E Block");
+choice=s.nextInt();
+switch(choice)
+{
+case 1:
+Dblock obj1 = new Dblock(20);
+currentlevel = currentlevel-obj1.u;
+break;
+case 2:
+Eblock obj2 = new Eblock(40);
+currentlevel= currentlevel-obj2.u;
+break;
+default:
+System.out.println("Invalid choice");
+}
+System.out.println("Currentlevel water level is "+ currentlevel);
+if(currentlevel<=150)
+System.out.println("Call Facility Manager to fill water tank");
+else
+System.out.println("Don't Call Facility Manager to fill water tank");
+}
+}}

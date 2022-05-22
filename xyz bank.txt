@@ -1,0 +1,25 @@
+import java.util.*;
+public class Stringprogram1 {
+public static void main(String args[]) {
+Scanner s = new Scanner(System.in);
+Random r = new Random();
+StringBuffer tpassword = new StringBuffer();
+int min=0;
+int max=9;
+String name,firsthalf,secondhalf;
+System.out.println("Enter username : ");
+name = s.next();
+int len = name.length();
+System.out.println("Length of username is " + len);
+firsthalf = name.substring(0,len/2);
+secondhalf = name.substring(len/2,len);
+tpassword.append(firsthalf);
+for(int i = 0;i< 16-len; i++)
+{
+int num = r.nextInt((max - min) + 1) + min;
+tpassword.append(num);
+}
+tpassword.append(secondhalf);
+System.out.println("16 digits transaction password is : " + tpassword);
+}
+}

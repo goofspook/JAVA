@@ -1,0 +1,43 @@
+import java.util.*;
+public class Employee {
+double fixedsal;
+double finalsalary;
+int eid;
+static String company_name,dept_name;
+static double bonus;
+static
+{
+company_name = "XYZ";
+dept_name="IT";
+bonus=10.0;
+}
+void calculatesalary()
+{
+Scanner s = new Scanner(System.in);
+System.out.println("Enter your fixed salary");
+fixedsal = s.nextDouble();
+System.out.println("Enter your Id");
+eid= s.nextInt();
+finalsalary = fixedsal + (bonus/100)*fixedsal;
+}
+static void displaycompanydata()
+{
+System.out.println("Company Name : " + company_name);
+System.out.println("Department Name : " + dept_name);
+System.out.println("Bonus : " + bonus + "%");
+}
+void displayemployeedata()
+{
+System.out.println("Id is : "+eid);
+System.out.println("Final Salary with Bonus : " + finalsalary);
+}
+public static void main(String args[]) {
+displaycompanydata();
+Employee e1 = new Employee();
+Employee e2 = new Employee();
+e1.calculatesalary();
+e1.displayemployeedata();
+e2.calculatesalary();
+e2.displayemployeedata();
+}
+}
